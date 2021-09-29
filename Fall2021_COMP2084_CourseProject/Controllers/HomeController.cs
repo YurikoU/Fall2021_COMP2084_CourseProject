@@ -1,11 +1,7 @@
 ﻿using Fall2021_COMP2084_CourseProject.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Fall2021_COMP2084_CourseProject.Controllers
 {
