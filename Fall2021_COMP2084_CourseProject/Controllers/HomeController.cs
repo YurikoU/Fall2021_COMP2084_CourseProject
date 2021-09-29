@@ -1,6 +1,7 @@
 ﻿using Fall2021_COMP2084_CourseProject.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Diagnostics;
 
 namespace Fall2021_COMP2084_CourseProject.Controllers
@@ -14,15 +15,34 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
             _logger = logger;
         }
 
+        //Home page
         public IActionResult Index()
         {
             return View();
         }
 
+        //Privacy page - Home/Privacy
         public IActionResult Privacy()
         {
             return View();
         }
+
+        //Search page - Home/Search
+        public IActionResult Search()
+        {
+            //Pass the simple data (e.g.; search result, today's date)
+            ViewBag.CurrentTime = DateTime.Now;
+
+            //Load the view to display
+            return View();
+        }
+
+        //Post page - Home/Post
+        public IActionResult Post()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
