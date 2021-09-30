@@ -1,7 +1,4 @@
-﻿using Fall2021_COMP2084_CourseProject.Models;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Fall2021_COMP2084_CourseProject.Controllers
 {
@@ -43,6 +40,12 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
             ViewBag.city = city;
 
             //Load the view to display
+            return View();
+        }
+
+        //Cities/Create
+        public IActionResult Create() 
+        {
             return View();
         }
     }
