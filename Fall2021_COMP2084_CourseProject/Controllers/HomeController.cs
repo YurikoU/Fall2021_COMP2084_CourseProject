@@ -28,10 +28,10 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
 
 
         //Post page - Home/Post
-        public IActionResult Post()
+/*        public IActionResult Post()
         {
             return View();
-        }
+        }*/
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

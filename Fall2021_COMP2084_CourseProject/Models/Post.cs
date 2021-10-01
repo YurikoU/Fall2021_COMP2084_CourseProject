@@ -27,20 +27,19 @@ namespace Fall2021_COMP2084_CourseProject.Models
         [Required(AllowEmptyStrings = false, ErrorMessage = "A phone number is required so a user can contact you.")]
         [MaxLength(20, ErrorMessage = "A phone number must be up to 20 characters.")]
         [Phone(ErrorMessage = "Please enter a valid phone number.")] //The input value must be a phone number
-        [DataType(DataType.PhoneNumber)] //Show the data as a phone number
         [Display(Name = "Contact phone number")]
         public string PhoneOnPost { get; set; }
 
         [MaxLength(60, ErrorMessage = "An e-mail address must be up to 60 characters.")]
         [EmailAddress(ErrorMessage = "Please enter a properly formatted e-mail address.")] //The input value must be an email address
-        [DataType(DataType.EmailAddress)]//Show the data as an email address
         [Display(Name = "Contact e-mail address")]
         public string EmailOnPost { get; set; }
 
 
         //Foreign keys
-        [Editable(false)]//UserId is read only.
+        //[Editable(false)]//UserId is read only.
         public string UserId { get; set; }
+        [Display(Name = "City")]
         public int CityId { get; set; }
 
 
