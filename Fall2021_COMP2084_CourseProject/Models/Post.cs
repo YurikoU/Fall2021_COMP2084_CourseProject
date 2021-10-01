@@ -11,7 +11,6 @@ namespace Fall2021_COMP2084_CourseProject.Models
         [Display(Name = "Posted Date")]
         public DateTime PostedDate { get; set; }
 
-        public int CityId { get; set; } //Foreign key
 
         [Range(100, 999999, ErrorMessage = "The rent must be between $100 and $999,999")]
         [Display(Name = "Monthly rent (CAD$)")]
@@ -23,9 +22,6 @@ namespace Fall2021_COMP2084_CourseProject.Models
         public string Description { get; set; }
 
         public string Photo { get; set; }
-
-        public string UserId { get; set; } //Foreign key
-
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "A phone number is required so a user can contact you.")]
         [MaxLength(20, ErrorMessage = "A phone number must be up to 20 characters.")]
@@ -40,8 +36,14 @@ namespace Fall2021_COMP2084_CourseProject.Models
         [Display(Name = "Contact e-mail address")]
         public string EmailOnPost { get; set; }
 
-        //Represents the parent object so Post can refer to the parent's property (1 City to many Posts)
-        //This is called "Navigation Property" by Microsoft
+
+        //Foreign keys
+        [Editable(false)]//UserId is read only.
+        public string UserId { get; set; }
+        public int CityId { get; set; }
+
+
+        //Navigation Property: represents the parent object so Post can refer to the parent's property (1 City to many Posts)
         public City City { get; set; }
     }
 }
