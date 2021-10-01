@@ -1,13 +1,17 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Fall2021_COMP2084_CourseProject.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Fall2021_COMP2084_CourseProject.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
+
+        //Declare global references for all models so they are available widely
+        public DbSet<City> Cities { get; set; }
+        public DbSet<Post> Posts { get; set; }
+
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

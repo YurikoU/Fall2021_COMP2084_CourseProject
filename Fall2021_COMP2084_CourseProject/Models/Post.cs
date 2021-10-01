@@ -5,7 +5,8 @@ namespace Fall2021_COMP2084_CourseProject.Models
 {
     public class Post
     {
-        public int Id { get; set; } //Primary key
+        //Primary key
+        public int Id { get; set; }
 
         [DataType(DataType.Date)] //Show only the date
         [Display(Name = "Posted Date")]
