@@ -26,11 +26,12 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         public async Task<IActionResult> Index()
         {
             //Access the parent table so the view can automatically show the category name from the parent table
-            var applicationDbContext = _context.Posts.Include(p => p.City);
+            var applicationDbContext = _context.Posts.Include(p => p.City).OrderBy(p => p.PostedDate);
 
             //Retrieve the data and convert it to the list
             return View(await applicationDbContext.ToListAsync());
         }
+
 
         // GET: Posts/Details/5
         public async Task<IActionResult> Details(int? id)
