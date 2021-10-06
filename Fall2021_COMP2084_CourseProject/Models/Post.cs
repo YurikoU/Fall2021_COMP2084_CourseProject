@@ -13,7 +13,6 @@ namespace Fall2021_COMP2084_CourseProject.Models
         [Display(Name = "Posted Date (MM/DD/YYYY)")]
         public DateTime PostedDate { get; set; }
 
-
         [Range(100, 999999, ErrorMessage = "The rent must be between $100 and $999,999")]
         [Display(Name = "Monthly Rent (CAD$)")]
         [DisplayFormat(DataFormatString ="{0:c}")]//Currency format by Microsoft
@@ -39,7 +38,6 @@ namespace Fall2021_COMP2084_CourseProject.Models
 
 
         //Foreign keys
-        //[Editable(false)]//UserId is read only.
         [Display(Name = "User ID")]
         public string UserId { get; set; }
         [Display(Name = "City")]
