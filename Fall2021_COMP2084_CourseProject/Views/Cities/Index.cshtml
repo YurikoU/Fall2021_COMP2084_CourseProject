@@ -1,19 +1,19 @@
 ﻿@model IEnumerable<Fall2021_COMP2084_CourseProject.Models.City>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Add a new city";
 }
 
-<h1>Index</h1>
+<h1>Cities</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Add a new city</a>
 </p>
-<table class="table">
+<table class="table sortable table-hover table-sm">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                <a href="#">Existing cities in the posts</a>
             </th>
             <th></th>
         </tr>

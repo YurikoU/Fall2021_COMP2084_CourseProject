@@ -73,6 +73,9 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
                 //Add the Post object
                 _context.Add(post);
 
+                //PostedDate is today's date
+                post.PostedDate = System.DateTime.Now;
+
                 //Save the changes on the database connection
                 await _context.SaveChangesAsync();
 

@@ -26,7 +26,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         public async Task<IActionResult> Index()
         {
             //Retrieve the data and convert it to the list
-            return View(await _context.Cities.ToListAsync());
+            return View(await _context.Cities.OrderBy(p => p.Name).ToListAsync());
         }
 
         // GET: Cities/Details/5

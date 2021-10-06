@@ -1,27 +1,28 @@
 ﻿@model IEnumerable<Fall2021_COMP2084_CourseProject.Models.Post>
 
 @{
-    ViewData["Title"] = "Posts";
+    ViewData["Title"] = "View Posts";
 }
 
 <h1>Posts</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create a New Post</a>
+    <a asp-area="" asp-controller="Cities" asp-action="Index" class="ml-4">Need a new city?</a>
 </p>
-<table class="table sortable">
+
+<table class="table sortable table-hover table-sm">
     <thead>
         <tr>
             <th>
                 <a href="#">@Html.DisplayNameFor(model => model.PostedDate)</a>
             </th>
             <th>
-                <a href="#">@Html.DisplayNameFor(model => model.Rent)</a>
-            </th>
-            <th>
                 <a href="#">@Html.DisplayNameFor(model => model.City)</a>
             </th>
-
+            <th align="center">
+                <a href="#">@Html.DisplayNameFor(model => model.Rent)</a>
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
@@ -50,10 +51,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.City.Name)
                 </td>
-                <td>
+                <td align="center">
                     @Html.DisplayFor(modelItem => item.Rent)
                 </td>
-
                 <td>
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
