@@ -83,7 +83,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
                     var fileName = Guid.NewGuid() + "-" + Photo.FileName;
 
                     //Set the destination path dynamically to work both locally and on Azure
-                    var uploadPath = System.IO.Directory.GetCurrentDirectory() + "\\wwwroot\\img\\posts" + fileName;
+                    var uploadPath = System.IO.Directory.GetCurrentDirectory() + "\\wwwroot\\img\\posts\\" + fileName;
 
                     //Copy the file image and save it into "img" folder
                     using (var fileStream = new FileStream(uploadPath, FileMode.Create))

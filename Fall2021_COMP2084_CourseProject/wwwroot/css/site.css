@@ -84,3 +84,7 @@ textarea.post-description-textarea {
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
+img.photo-review-img {
+    width: 110px;
+}

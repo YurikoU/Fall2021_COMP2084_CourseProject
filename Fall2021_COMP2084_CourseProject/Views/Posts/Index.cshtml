@@ -27,9 +27,9 @@
                 @Html.DisplayNameFor(model => model.Description)
             </th>
 
-            @*<th class="align-middle text-center">
-            @Html.DisplayNameFor(model => model.Photo)
-            </th>*@
+            <th class="align-middle text-center">
+                @*@Html.DisplayNameFor(model => model.Photo)*@
+            </th>
 
             <th class="align-middle text-center">
                 @Html.DisplayNameFor(model => model.PhoneOnPost)
@@ -62,7 +62,10 @@
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
                 <td class="text-center">
-                    @Html.DisplayFor(modelItem => item.Photo)
+                    @if (item.Photo != null)
+                    { 
+                    <img src="~/img/posts/@item.Photo" alt="Room photo" class="photo-review-img" />
+                    }
                 </td>
                 <td class="text-left">
                     @Html.DisplayFor(modelItem => item.PhoneOnPost)
