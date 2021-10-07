@@ -15,7 +15,7 @@ namespace Fall2021_COMP2084_CourseProject.Models
 
         [Range(100, 999999, ErrorMessage = "The rent must be between $100 and $999,999")]
         [Display(Name = "Monthly Rent (CAD$)")]
-        [DisplayFormat(DataFormatString ="{0:c}")]//Currency format by Microsoft
+        [DisplayFormat(DataFormatString ="{0:c0}")]//Currency format by Microsoft
         public int Rent { get; set; } //Rent is optional because some rooms' rents are undisclosed.
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Please describe the room a bit.")]

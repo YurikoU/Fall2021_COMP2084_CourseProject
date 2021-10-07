@@ -9,7 +9,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="CityId" class="control-label"></label>
@@ -23,22 +23,27 @@
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" required />
+                <p style="margin-bottom: 0;"></p>
+                @Html.TextAreaFor(p => p.Description, new { @class = "post-description-textarea" })
+
+@*                <input asp-for="Description" class="form-control" required />
+*@
+
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Photo" class="control-label"></label>
-                <input asp-for="Photo" class="form-control" />
+                <input asp-for="Photo" class="form-control" type="file" />
                 <span asp-validation-for="Photo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="PhoneOnPost" class="control-label"></label>
-                <input asp-for="PhoneOnPost" class="form-control" type="tel" placeholder="E.g., (123)123-1234" required />
+                <input asp-for="PhoneOnPost" class="form-control" type="tel" placeholder="(123)123-1234" required />
                 <span asp-validation-for="PhoneOnPost" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="EmailOnPost" class="control-label"></label>
-                <input asp-for="EmailOnPost" class="form-control" type="email" placeholder="E.g., John-Smith@example.com" required />
+                <input asp-for="EmailOnPost" class="form-control" type="email" placeholder="John-Smith@example.com" required />
                 <span asp-validation-for="EmailOnPost" class="text-danger"></span>
             </div>
             <div class="form-group">
