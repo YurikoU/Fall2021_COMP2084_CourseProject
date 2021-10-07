@@ -14,30 +14,34 @@
 <table class="table sortable table-hover table-sm">
     <thead>
         <tr>
-            <th>
+            <th class="align-middle text-center">
                 <a href="#">@Html.DisplayNameFor(model => model.PostedDate)</a>
             </th>
-            <th>
+            <th class="align-middle text-center">
                 <a href="#">@Html.DisplayNameFor(model => model.City)</a>
             </th>
-            <th align="center">
+            <th class="align-middle text-center">
                 <a href="#">@Html.DisplayNameFor(model => model.Rent)</a>
             </th>
-            <th>
+            <th class="align-middle text-center">
                 @Html.DisplayNameFor(model => model.Description)
             </th>
-            <th>
+            <th class="align-middle text-center">
                 @Html.DisplayNameFor(model => model.Photo)
             </th>
-            <th>
+            <th class="align-middle text-center">
                 @Html.DisplayNameFor(model => model.PhoneOnPost)
             </th>
-            <th>
+            <th class="align-middle text-center">
                 @Html.DisplayNameFor(model => model.EmailOnPost)
             </th>
-            <th>
+
+
+@*            <th class="align-middle text-center">
                 @Html.DisplayNameFor(model => model.UserId)
             </th>
+*@
+
             <th></th>
         </tr>
     </thead>
@@ -45,31 +49,35 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.PostedDate)
                 </td>
-                <td>
+                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.City.Name)
                 </td>
-                <td align="center">
+                <td  class="text-right">
                     @Html.DisplayFor(modelItem => item.Rent)
                 </td>
-                <td>
+                <td class="text-left">
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
-                <td>
+                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.Photo)
                 </td>
-                <td>
+                <td class="text-left">
                     @Html.DisplayFor(modelItem => item.PhoneOnPost)
                 </td>
-                <td>
+                <td class="text-left">
                     @Html.DisplayFor(modelItem => item.EmailOnPost)
                 </td>
-                <td>
+
+
+@*                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.UserId)
                 </td>
-                <td>
+*@
+
+                <td class="text-center">
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
