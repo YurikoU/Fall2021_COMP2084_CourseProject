@@ -26,9 +26,11 @@
             <th class="align-middle text-center">
                 @Html.DisplayNameFor(model => model.Description)
             </th>
-            <th class="align-middle text-center">
-                @Html.DisplayNameFor(model => model.Photo)
-            </th>
+
+            @*<th class="align-middle text-center">
+            @Html.DisplayNameFor(model => model.Photo)
+            </th>*@
+
             <th class="align-middle text-center">
                 @Html.DisplayNameFor(model => model.PhoneOnPost)
             </th>
@@ -36,11 +38,9 @@
                 @Html.DisplayNameFor(model => model.EmailOnPost)
             </th>
 
-
-@*            <th class="align-middle text-center">
+            @*<th class="align-middle text-center">
                 @Html.DisplayNameFor(model => model.UserId)
-            </th>
-*@
+            </th>*@
 
             <th></th>
         </tr>
@@ -71,11 +71,9 @@
                     @Html.DisplayFor(modelItem => item.EmailOnPost)
                 </td>
 
-
-@*                <td class="text-center">
+                @*<td class="text-center">
                     @Html.DisplayFor(modelItem => item.UserId)
-                </td>
-*@
+                </td>*@
 
                 <td class="text-center">
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
