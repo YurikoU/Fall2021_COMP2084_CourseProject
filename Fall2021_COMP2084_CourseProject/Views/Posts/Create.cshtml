@@ -24,7 +24,7 @@
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
                 <p style="margin-bottom: 0;"></p>
-                @Html.TextAreaFor(p => p.Description, new { @class = "post-description-textarea" })
+                @Html.TextAreaFor(p => p.Description, new { @class = "post-description-textarea", rows = 5})
 
 @*                <input asp-for="Description" class="form-control" required />
 *@
