@@ -76,21 +76,6 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
                 //Once an user uploads a photo, save it
                 if (Photo != null)
                 {
-                    /*//Temporary file location for an uploaded photo
-                    var filePath = Path.GetTempFileName();
-
-                    //Generate a unique name adding GUID, so it doesn't overwrite the existing photo data
-                    var fileName = Guid.NewGuid() + "-" + Photo.FileName;
-
-                    //Set the destination path dynamically to work both locally and on Azure
-                    var uploadPath = System.IO.Directory.GetCurrentDirectory() + "\\wwwroot\\img\\posts\\" + fileName;
-
-                    //Copy the file image and save it into "img" folder
-                    using (var fileStream = new FileStream(uploadPath, FileMode.Create))
-                    {
-                        await Photo.CopyToAsync(fileStream);
-                    }*/
-
                     var fileName = UploadPhoto(Photo);
 
                     //Set the photo property name of the new Post object as the unique name
@@ -173,25 +158,10 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
             {
                 try
                 {
-                    //If there is an uploaded photo
+                    //If there is an uploaded photo, store it into the Photo property
                     if (Photo != null)
                     {
-                        //Temporary file location for an uploaded photo
-                        var filePath = Path.GetTempFileName();
-
-                        //Generate a unique name adding GUID, so it doesn't overwrite the existing photo data
-                        var fileName = Guid.NewGuid() + "-" + Photo.FileName;
-
-                        //Set the destination path dynamically to work both locally and on Azure
-                        var uploadPath = System.IO.Directory.GetCurrentDirectory() + "\\wwwroot\\img\\posts\\" + fileName;
-
-                        //Copy the file image and save it into "img" folder
-                        using (var fileStream = new FileStream(uploadPath, FileMode.Create))
-                        {
-                            await Photo.CopyToAsync(fileStream);
-                        }
-
-                        //Set the photo property name of the new Post object as the unique name
+                        var fileName = UploadPhoto(Photo);
                         post.Photo = fileName;
                     }
 
