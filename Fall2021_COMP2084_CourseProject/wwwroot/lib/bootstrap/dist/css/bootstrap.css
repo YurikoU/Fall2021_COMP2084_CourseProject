@@ -1582,7 +1582,7 @@ pre code {
 }
 
 .table-hover .table-primary:hover {
-  background-color: #9fcdff;
+    background-color: #9fcdff;
 }
 
 .table-hover .table-primary:hover > td,

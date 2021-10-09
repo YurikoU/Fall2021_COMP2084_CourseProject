@@ -10,6 +10,7 @@ a.navbar-brand {
 /* Provide sufficient contrast against white background */
 a {
     color: #0366d6;
+    /*    color: #93b0d0;*/
 }
 
 .btn-primary {
@@ -93,23 +94,38 @@ img.photo-review-img {
     width: 110px;
 }
 
-header {
+header#header-style {
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
-
     z-index: 2;
+    background-color: #d2c8bc;
 }
 
-nav {
+h1 {
+    color: #ac7e62;
+}
 
-    /*background-color: rgb(160, 147, 125);*/
-    /*color: #F6E6CB;
-*/
+table thead {
+    background-color: #d2c8bc;
+    color: #ac7e62;
 }
 
 
-.required-item {
-    font: red bold;
+
+table thead a {
+    color: #5b828e;
+}
+
+table a.email-color {
+    color: #5b828e;
+}
+
+.link-color-change-light {
+    color: #ba9a88;
+}
+
+.link-color-change-dark {
+    color: #ac7e62;
 }
