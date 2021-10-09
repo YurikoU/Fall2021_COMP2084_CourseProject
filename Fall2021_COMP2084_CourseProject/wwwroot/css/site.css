@@ -93,11 +93,23 @@ img.photo-review-img {
     width: 110px;
 }
 
-/*
 header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
-}*/
 
+    z-index: 2;
+}
+
+nav {
+
+    /*background-color: rgb(160, 147, 125);*/
+    /*color: #F6E6CB;
+*/
+}
+
+
+.required-item {
+    font: red bold;
+}
