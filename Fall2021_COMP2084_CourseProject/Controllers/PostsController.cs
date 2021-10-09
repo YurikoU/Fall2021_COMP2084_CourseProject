@@ -135,7 +135,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,PostedDate,Rent,Description,Photo,PhoneOnPost,EmailOnPost,UserId,CityId")] Post post)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,PostedDate,Rent,Description,PhoneOnPost,EmailOnPost,UserId,CityId")] Post post, IFormFile Photo)
         {
             if (id != post.Id)
             {
@@ -146,7 +146,30 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
             if (ModelState.IsValid)
             {
                 try
-                { 
+                {
+                    //If there is an uploaded photo
+                    if (Photo != null)
+                    {
+                        //Temporary file location for an uploaded photo
+                        var filePath = Path.GetTempFileName();
+
+                        //Generate a unique name adding GUID, so it doesn't overwrite the existing photo data
+                        var fileName = Guid.NewGuid() + "-" + Photo.FileName;
+
+                        //Set the destination path dynamically to work both locally and on Azure
+                        var uploadPath = System.IO.Directory.GetCurrentDirectory() + "\\wwwroot\\img\\posts\\" + fileName;
+
+                        //Copy the file image and save it into "img" folder
+                        using (var fileStream = new FileStream(uploadPath, FileMode.Create))
+                        {
+                            await Photo.CopyToAsync(fileStream);
+                        }
+
+                        //Set the photo property name of the new Post object as the unique name
+                        post.Photo = fileName;
+                    }
+
+
                     //Update the Post object
                     _context.Update(post);
 
