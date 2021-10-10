@@ -12,9 +12,16 @@
 <table class="table sortable table-hover table-sm">
     <thead>
         <tr>
-            <th>
-                <a href="#">Existing cities in our posts</a>
+            <th class="align-middle text-center">
+                <a href="#">@Html.DisplayNameFor(model => model.AddedDate)</a>
             </th>
+            <th class="align-middle text-center">
+                <a href="#">@Html.DisplayNameFor(model => model.Province)</a>
+            </th>
+            <th class="align-middle text-center">
+                <a href="#">Existing cities in the site</a>
+            </th>
+
             <th></th>
         </tr>
     </thead>
@@ -22,9 +29,17 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                <td class="align-middle text-center">
+                    @Html.DisplayFor(modelItem => item.AddedDate)
+                </td>
+                <td class="align-middle text-center">
+                    @Html.DisplayFor(modelItem => item.Province)
+                </td>
+                <td class="align-middle text-center">
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
+
+
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id" class="link-color-change-light">
                         @*Icon Source   https://icons.getbootstrap.com/*@
