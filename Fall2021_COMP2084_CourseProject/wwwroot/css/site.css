@@ -116,3 +116,8 @@ table a.email-color {
 .site-logo {
     width: 30px;
 }
+
+.github-link {
+    color: black;
+    margin-left: 15px;
+}
