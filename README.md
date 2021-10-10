@@ -10,7 +10,7 @@ https://getbootstrap.com/
 # Font
 https://fonts.google.com/
 
-# GitHub Icon
+# Icons
 https://icons.getbootstrap.com/
 
 # Site Logo
