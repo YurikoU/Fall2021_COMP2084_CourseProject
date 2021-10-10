@@ -9,6 +9,9 @@ https://searchinroom.azurewebsites.net/
 # Font Source
 https://fonts.google.com/
 
+# Site Logo Source
+https://logomakr.com/
+
 # Color Pallete Source
 https://colorpalettes.net/color-palette-4311/
 
