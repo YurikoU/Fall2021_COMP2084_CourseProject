@@ -7,7 +7,7 @@
 <h1>Cities</h1>
 
 <p>
-    <a asp-action="Create">Add another city</a>
+    <a asp-action="Create" class="link-color-change-dark">Add another city</a>
 </p>
 <table class="table sortable table-hover table-sm">
     <thead>
@@ -19,17 +19,21 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="link-color-change-light">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="link-color-change-light">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="link-color-change-light">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<a class="nav-link link-color-change-dark" asp-area="" asp-controller="Posts" asp-action="Index">Back to Posts</a>
+

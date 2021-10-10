@@ -24,7 +24,7 @@
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
                 <p style="margin-bottom: 0;"></p>
-                @Html.TextAreaFor(p => p.Description, new { @class = "post-description-textarea", placeholder= "Word count: 1,500 characters", rows = 5})
+                @Html.TextAreaFor(p => p.Description, new { @class = "post-description-textarea form-control", placeholder= "Word count: 1,500 characters", rows = 5})
 
 @*                <input asp-for="Description" class="form-control" required />
 *@
@@ -33,7 +33,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Photo" class="control-label"></label>
-                <input asp-for="Photo" class="form-control" type="file" />
+                <input asp-for="Photo" class="form-control-file" type="file" />
                 <span asp-validation-for="Photo" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -59,7 +59,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Cancel</a>
+    <a asp-action="Index" class="link-color-change-dark">Cancel</a>
 </div>
 
 @section Scripts {
