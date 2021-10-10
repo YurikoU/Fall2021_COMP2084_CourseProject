@@ -13,6 +13,9 @@ https://fonts.google.com/
 # Icons
 https://icons.getbootstrap.com/
 
+# JavaScript Library (for a sortable table)
+https://kryogenix.org/code/browser/sorttable/
+
 # Site Logo
 https://logomakr.com/
 
