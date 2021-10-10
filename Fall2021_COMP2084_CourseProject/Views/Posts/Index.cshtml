@@ -41,8 +41,8 @@
             </th>
 
             @*<th class="align-middle text-center">
-                @Html.DisplayNameFor(model => model.UserId)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.UserId)
+                </th>*@
 
             <th></th>
         </tr>
@@ -57,7 +57,7 @@
                 <td class="text-center">
                     @Html.DisplayFor(modelItem => item.City.Name)
                 </td>
-                <td  class="text-center">
+                <td class="text-center">
                     @Html.DisplayFor(modelItem => item.Rent)
                 </td>
                 <td class="text-left">
@@ -65,8 +65,8 @@
                 </td>
                 <td class="text-center">
                     @if (item.Photo != null)
-                    { 
-                    <img src="~/img/posts/@item.Photo" alt="Room photo" class="photo-review-img" />
+                    {
+                        <img src="~/img/posts/@item.Photo" alt="Room photo" class="photo-review-img" />
                     }
                 </td>
                 <td class="text-left">
@@ -77,8 +77,8 @@
                 </td>
 
                 @*<td class="text-center">
-                    @Html.DisplayFor(modelItem => item.UserId)
-                </td>*@
+                        @Html.DisplayFor(modelItem => item.UserId)
+                    </td>*@
 
                 <td class="text-center">
                     <a asp-action="Edit" asp-route-id="@item.Id" class="link-color-change-light" data-toggle="tooltip" title="Edit">
