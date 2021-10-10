@@ -7,20 +7,17 @@ https://searchinroom.azurewebsites.net/
 # CSS Framework
 https://getbootstrap.com/
 
+# Color Combination
+https://colorpalettes.net/color-palette-4311/
+
 # Font
 https://fonts.google.com/
-
-# Icons
-https://icons.getbootstrap.com/
 
 # JavaScript Library (for a sortable table)
 https://kryogenix.org/code/browser/sorttable/
 
-# Site Logo
-https://logomakr.com/
-
-# Color Combination
-https://colorpalettes.net/color-palette-4311/
+# Link Icons
+https://icons.getbootstrap.com/
 
 # Room Photo
 Room1.jpg
@@ -36,3 +33,6 @@ Photographer: Gabriel Beaudry (@gbeaudry)
 Room4.jpg
 https://unsplash.com/photos/oTJ92KUXHls
 Photographer: Norbert Levajsics (@levajsics)
+
+# Site Logo
+https://logomakr.com/
