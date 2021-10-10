@@ -27,7 +27,7 @@ Room2.jpg
 https://pixabay.com/photos/room-bookshelf-book-doodle-inside-4786779/
 
 Room3.jpg
-https://unsplash.com/photos/WuQME0I_oZA
+https://unsplash.com/photos/WuQME0I_oZA <br />
 Photographer: Gabriel Beaudry (@gbeaudry)
 
 Room4.jpg
