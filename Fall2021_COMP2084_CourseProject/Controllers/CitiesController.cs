@@ -59,14 +59,17 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] City city)
+        public async Task<IActionResult> Create([Bind("Id,AddedDate,Province,Name")] City city)
         {
             //Check if the input is valid
             if (ModelState.IsValid)
             {
                 //Add the City object
                 _context.Add(city);
-                
+
+                //PostedDate is today's date
+                city.AddedDate = System.DateTime.Now;
+
                 //Save the changes on the database connection
                 await _context.SaveChangesAsync();
 
@@ -97,7 +100,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] City city)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,AddedDate,Province,Name")] City city)
         {
             if (id != city.Id)
             {
