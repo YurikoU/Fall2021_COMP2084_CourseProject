@@ -1,40 +1,42 @@
 # Fall2021_COMP2084_CourseProject
 A web application to search for a shared house. Those looking for a room can review the ads on my application, and those who want to rent out their rooms can post their ads.
 
-Live Site  
+
+
+# Live Site  
 https://searchinroom.azurewebsites.net/
 
 
-
-# CSS Framework  
+# All Sources I have cited for my application
+CSS Framework  
 https://getbootstrap.com/
 
-# Color Combination
+Color Combination
 https://colorpalettes.net/color-palette-4311/
 
-# Font
+Font
 https://fonts.google.com/
 
-# JavaScript Library (for a sortable table)
+JavaScript Library (for a sortable table)
 https://kryogenix.org/code/browser/sorttable/
 
-# Link Icons
+Link Icons
 https://icons.getbootstrap.com/
 
-# Room Photo
-Room1.jpg
+Site Logo
+https://logomakr.com/
+
+Room Photo  
+Room1.jpg  
 https://pixabay.com/photos/bedroom-cupboard-bed-room-sofa-1872196/
 
-Room2.jpg
+Room2.jpg  
 https://pixabay.com/photos/room-bookshelf-book-doodle-inside-4786779/
 
-Room3.jpg
-https://unsplash.com/photos/WuQME0I_oZA <br />
+Room3.jpg  
+https://unsplash.com/photos/WuQME0I_oZA  
 Photographer: Gabriel Beaudry (@gbeaudry)
 
-Room4.jpg
-https://unsplash.com/photos/oTJ92KUXHls <br />
+Room4.jpg  
+https://unsplash.com/photos/oTJ92KUXHls   
 Photographer: Norbert Levajsics (@levajsics)
-
-# Site Logo
-https://logomakr.com/
