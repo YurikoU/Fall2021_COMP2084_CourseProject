@@ -121,3 +121,8 @@ table a.email-color {
     color: black;
     margin-left: 15px;
 }
+
+.home-main-text {
+    margin: 0 auto;
+    width: 500px;
+}
