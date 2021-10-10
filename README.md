@@ -31,7 +31,7 @@ https://unsplash.com/photos/WuQME0I_oZA <br />
 Photographer: Gabriel Beaudry (@gbeaudry)
 
 Room4.jpg
-https://unsplash.com/photos/oTJ92KUXHls
+https://unsplash.com/photos/oTJ92KUXHls <br />
 Photographer: Norbert Levajsics (@levajsics)
 
 # Site Logo
