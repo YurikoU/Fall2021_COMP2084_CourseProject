@@ -52,7 +52,7 @@ jobs:
         uses: azure/webapps-deploy@v2   
         
         with:
-          app-name: 'SearchInRoom'
+          app-name: 'SearchinRoom'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6CA9584C30584DB7BAAE31211D80668C }}
           package: .
