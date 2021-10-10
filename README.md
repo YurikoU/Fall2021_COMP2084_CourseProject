@@ -12,7 +12,7 @@ https://fonts.google.com/
 # Site Logo Source
 https://logomakr.com/
 
-# Color Pallete Source
+# Color Combination Source
 https://colorpalettes.net/color-palette-4311/
 
 # Room Photo Source
