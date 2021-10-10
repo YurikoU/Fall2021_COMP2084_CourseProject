@@ -49,9 +49,11 @@ jobs:
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
+        uses: azure/actions/login@v1
+        
         with:
           app-name: 'SearchInRoom'
           slot-name: 'Production'
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_SKucieBcR1NZoF18sa4YsRou40xwwhbx15ZFBS1Xjee6HRckoz0cPrSvdDaH }}
           package: .
