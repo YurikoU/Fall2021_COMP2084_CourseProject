@@ -7,6 +7,9 @@ https://searchinroom.azurewebsites.net/
 # CSS Framework
 https://getbootstrap.com/
 
+# Color Combination
+https://colorpalettes.net/color-palette-4311/
+
 # Font
 https://fonts.google.com/
 
@@ -18,9 +21,6 @@ https://kryogenix.org/code/browser/sorttable/
 
 # Site Logo
 https://logomakr.com/
-
-# Color Combination
-https://colorpalettes.net/color-palette-4311/
 
 # Room Photo
 Room1.jpg
