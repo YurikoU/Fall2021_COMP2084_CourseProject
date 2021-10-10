@@ -4,18 +4,22 @@ A web application to search for a shared house. Those looking for a room can rev
 
 https://searchinroom.azurewebsites.net/
 
+# CSS Framework
+https://getbootstrap.com/
 
-
-# Font Source
+# Font
 https://fonts.google.com/
 
-# Site Logo Source
+# Icons
+https://icons.getbootstrap.com/
+
+# Site Logo
 https://logomakr.com/
 
-# Color Pallete Source
+# Color Combination
 https://colorpalettes.net/color-palette-4311/
 
-# Room Photo Source
+# Room Photo
 Room1.jpg
 https://pixabay.com/photos/bedroom-cupboard-bed-room-sofa-1872196/
 
