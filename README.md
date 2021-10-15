@@ -12,7 +12,7 @@ https://search-in-room.azurewebsites.net/
 - Email: admin@demo.ca   
 - Password: Demo123!   
 
-#### Administrator
+#### User
 - Email: user1@demo.ca   
 - Password: Demo123!   
 
