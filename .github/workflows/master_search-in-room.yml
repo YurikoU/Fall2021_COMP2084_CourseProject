@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - SearchinRoom
+name: Build and deploy ASP.Net Core app to Azure Web App - Search-In-Room
 
 on:
   push:
@@ -49,10 +49,9 @@ jobs:
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2   
-        
+        uses: azure/webapps-deploy@v2
         with:
-          app-name: 'SearchinRoom'
+          app-name: 'Search-In-Room'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6CA9584C30584DB7BAAE31211D80668C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AF63F38245F940D3AFEE9EF2E0332066 }}
           package: .

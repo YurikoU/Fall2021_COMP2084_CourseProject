@@ -5,7 +5,7 @@ This is a simple .NET Core application in C# using the MVC Scaffolding structure
 It is pretty common for university or college students to live in a shared house once they live apart from their families. Indeed, I have lived in several shared houses in Canada so far and used websites to look for a new room every time. I have also seen some people tend to move to another house frequently. Hence, there are many prospective users to look for or rent out a room.
 
 # Live Site
-https://searchinroom.azurewebsites.net/
+https://search-in-room.azurewebsites.net/
 
 # About Me
 - Student Name: Yuriko Uchida
@@ -19,8 +19,11 @@ https://getbootstrap.com/
 ### Color Combination 
 https://colorpalettes.net/color-palette-4311/
 
+### File Compressor   
+https://www.compress2go.com/
+
 ### Font 
-https://fonts.google.com/
+https://fonts.google.com/   
 
 ### JavaScript Library (for a sortable table) 
 https://kryogenix.org/code/browser/sorttable/
