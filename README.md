@@ -19,8 +19,8 @@ https://getbootstrap.com/
 ### Color Combination 
 https://colorpalettes.net/color-palette-4311/
 
-### File Compress Tool   
-https://www.freeconvert.com/   
+### File Compressor   
+https://www.compress2go.com/
 
 ### Font 
 https://fonts.google.com/   
@@ -36,7 +36,7 @@ https://logomakr.com/
 
 ### Room Photo
 Room1.jpg   
-![Room1](https://user-images.githubusercontent.com/76763897/137437462-269e4341-cacc-4003-a035-48e766c615b5.jpg)   
+![Room1](https://user-images.githubusercontent.com/76763897/137438061-06dd2201-b634-4fd6-beec-287b26b94c2f.jpg)
 https://pixabay.com/photos/bedroom-cupboard-bed-room-sofa-1872196/
 
 Room2.jpg   
