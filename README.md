@@ -9,7 +9,7 @@ https://search-in-room.azurewebsites.net/
 
 # Admin Account
 - Email: admin@demo.ca
-- Password: Demo123#
+- Password: Demo123!
 
 # About Me
 - Student Name: Yuriko Uchida
