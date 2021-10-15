@@ -8,11 +8,11 @@ It is pretty common for university or college students to live in a shared house
 https://search-in-room.azurewebsites.net/
 
 # Test Accounts
-### Administrator
+#### Administrator
 - Email: admin@demo.ca   
 - Password: Demo123!   
 
-### Administrator
+#### Administrator
 - Email: user1@demo.ca   
 - Password: Demo123!   
 
@@ -22,28 +22,28 @@ https://search-in-room.azurewebsites.net/
 - Course Name: Server-Side Scripting-ASP.NET - 01 (COMP2084)
 
 # References
-### CSS Framework
+#### CSS Framework
 https://getbootstrap.com/
 
-### Color Combination 
+#### Color Combination 
 https://colorpalettes.net/color-palette-4311/
 
-### File Compressor   
+#### File Compressor   
 https://www.compress2go.com/
 
-### Font 
+#### Font 
 https://fonts.google.com/   
 
-### JavaScript Library (for a sortable table) 
+#### JavaScript Library (for a sortable table) 
 https://kryogenix.org/code/browser/sorttable/
 
-### Link Icons 
+#### Link Icons 
 https://icons.getbootstrap.com/
 
-### Site Logo 
+#### Site Logo 
 https://logomakr.com/
 
-### Room Photo
+#### Room Photo
 Room1.jpg   
 https://pixabay.com/photos/bedroom-cupboard-bed-room-sofa-1872196/
 
