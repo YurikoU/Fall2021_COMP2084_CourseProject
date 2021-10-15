@@ -33,6 +33,7 @@ namespace Fall2021_COMP2084_CourseProject
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false) //Email confirmation:OFF
+                .AddRoles<IdentityRole>()  //Enable to Role Management for Authorization to track the account role, which is OFF by default
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
         }
