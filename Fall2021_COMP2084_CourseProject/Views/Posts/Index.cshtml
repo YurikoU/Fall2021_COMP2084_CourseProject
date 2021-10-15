@@ -6,10 +6,14 @@
 
 <h1>Posts</h1>
 
-<p>
-    <a asp-action="Create" class="link-color-change-dark">Create a New Post</a>
-    <a asp-area="" asp-controller="Cities" asp-action="Index" class="ml-4 link-color-change-dark">Need another city for your post?</a>
-</p>
+@*An user can't access the following links unless they're logs in*@
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        <a asp-action="Create" class="link-color-change-dark">Create a New Post</a>
+        <a asp-area="" asp-controller="Cities" asp-action="Index" class="ml-4 link-color-change-dark">Need another city for your post?</a>
+    </p>
+}
 
 
 

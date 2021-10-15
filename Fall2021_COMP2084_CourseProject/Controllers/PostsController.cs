@@ -10,7 +10,7 @@ using System.IO;
 using System;
 /*
 GET : Before clicking the submit button
-POST: After clicking the submit button
+POST: After submitting the form
 */
 
 namespace Fall2021_COMP2084_CourseProject.Controllers
@@ -164,7 +164,6 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
                         var fileName = UploadPhoto(Photo);
                         post.Photo = fileName;
                     }
-
 
                     //Update the Post object
                     _context.Update(post);

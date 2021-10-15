@@ -4,14 +4,17 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Fall2021_COMP2084_CourseProject.Data;
 using Fall2021_COMP2084_CourseProject.Models;
+using Microsoft.AspNetCore.Authorization;
 /*
 GET : Before clicking the submit button
-POST: After clicking the submit button
- */
+POST: After submitting the form
+*/
 
 
 namespace Fall2021_COMP2084_CourseProject.Controllers
 {
+
+    [Authorize]
     public class CitiesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -30,6 +33,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         }
 
         // GET: Cities/Details/5
+        [AllowAnonymous]//Make this Details() method public, overriding [Authorize] of CitiesController class
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
