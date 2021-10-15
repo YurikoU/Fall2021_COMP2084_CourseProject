@@ -7,9 +7,14 @@ It is pretty common for university or college students to live in a shared house
 # Live Site
 https://search-in-room.azurewebsites.net/
 
-# Admin Account
-- Email: admin@demo.ca
-- Password: Demo123!
+# Test Accounts
+### Administrator
+- Email: admin@demo.ca   
+- Password: Demo123!   
+
+### Administrator
+- Email: user1@demo.ca   
+- Password: Demo123!   
 
 # About Me
 - Student Name: Yuriko Uchida
