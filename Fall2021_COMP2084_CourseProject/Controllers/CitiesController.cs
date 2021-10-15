@@ -13,8 +13,8 @@ POST: After submitting the form
 
 namespace Fall2021_COMP2084_CourseProject.Controllers
 {
-
-    [Authorize]
+    //Only the Administrator account can accesses
+    [Authorize(Roles = "Administrator")]
     public class CitiesController : Controller
     {
         private readonly ApplicationDbContext _context;

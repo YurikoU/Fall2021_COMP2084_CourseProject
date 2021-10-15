@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Fall2021_COMP2084_CourseProject.Models.City>
+@{ViewData["Title"] = "Posts by City";}
+
+<h1>Posts by City</h1>
+
+<section class="row card-group">
+    @foreach(var c in Model)
+    {
+        <div class="col-sm-6 col-lg-4 mb-3">
+            <div class="card mb-4 text-center h-100">
+                <div class="card-body">
+                    <a asp-controller="CitiesForUsers" asp-action="PostsByCity" asp-route-cityId="@c.Id">
+                        @c.Name
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+
+</section>

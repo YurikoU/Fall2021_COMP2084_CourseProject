@@ -1,17 +1,22 @@
 ﻿@model IEnumerable<Fall2021_COMP2084_CourseProject.Models.Post>
 
 @{
-    ViewData["Title"] = "View Posts";
+    ViewData["Title"] = "All Posts";
 }
 
-<h1>Posts</h1>
+<h1>All Posts</h1>
 
 @*An user can't access the following links unless they're logs in*@
 @if (User.Identity.IsAuthenticated)
 {
     <p>
         <a asp-action="Create" class="link-color-change-dark">Create a New Post</a>
-        <a asp-area="" asp-controller="Cities" asp-action="Index" class="ml-4 link-color-change-dark">Need another city for your post?</a>
+
+        @*If the user is the administrator, the following link is also visible*@
+        @if (User.IsInRole("Administrator"))
+        {
+            <a asp-area="" asp-controller="Cities" asp-action="Index" class="ml-4 link-color-change-dark">Need another city?</a>
+        }
     </p>
 }
 
