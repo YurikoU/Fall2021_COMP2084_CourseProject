@@ -66,12 +66,12 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         public async Task<IActionResult> Create([Bind("Id,AddedDate,Province,Name")] City city)
         {
             City sameCityName = _context.Cities.FirstOrDefault(p => p.Name == city.Name);
-            if (sameCityName != null)
+            City sameProvinceName = _context.Cities.FirstOrDefault(p => p.Province == city.Province);
+            if (sameCityName != null && sameProvinceName != null)
             {
                 //Alert when the same city already exists
                 ModelState.AddModelError("cityNameAlert", "The city already exists.");
             }
-
 
             //Check if the input is valid
             if (ModelState.IsValid)

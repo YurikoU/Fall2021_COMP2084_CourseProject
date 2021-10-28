@@ -14,7 +14,18 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Province" class="control-label"></label>
-                <input asp-for="Province" class="form-control" />
+                <select asp-for="Province" class="form-control">
+                    <option>Alberta</option>
+                    <option>British Columbia</option>
+                    <option>Manitoba</option>
+                    <option>Newfoundland and Labrador</option>
+                    <option>New Brunswick</option>
+                    <option>Nova Scotia</option>
+                    <option>Ontario</option>
+                    <option>Prince Edward Island</option>
+                    <option>Quebec</option>
+                    <option>Saskatchewan</option>
+                </select>
                 <span asp-validation-for="Province" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -22,7 +33,7 @@
                 <input asp-for="Name" class="form-control" />
                 @*@Html.ValidationMessage("cityNameAlert")*@
                 @Html.ValidationSummary(false, "", new { @class = "text-danger" })
-                
+
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
