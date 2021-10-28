@@ -57,7 +57,6 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
             return View();
         }
 
-
         // POST: Cities/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -114,16 +113,18 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,AddedDate,Province,Name")] City city)
         {
+
             if (id != city.Id)
             {
                 return NotFound();
             }
 
             City sameCityName = _context.Cities.FirstOrDefault(p => p.Name == city.Name);
-            if (sameCityName != null)
+            City sameProvinceName = _context.Cities.FirstOrDefault(p => p.Province == city.Province);
+            if (sameCityName != null && sameProvinceName != null)
             {
                 //Alert when the same city already exists
-                ModelState.AddModelError("cityNameAlert", "The city already exists.");
+                ModelState.AddModelError("cityNameAlert", "The city already exists.");                
             }
 
             //Check if the input is valid
