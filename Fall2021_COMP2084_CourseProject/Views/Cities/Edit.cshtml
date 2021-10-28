@@ -1,7 +1,7 @@
 ﻿@model Fall2021_COMP2084_CourseProject.Models.City
 
 @{
-    ViewData["Title"] = "Edit the post";
+    ViewData["Title"] = "Edit the city information";
 }
 
 <h1>Edit the post</h1>
@@ -13,11 +13,11 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
 
-            <div class="form-group">
-                <label asp-for="AddedDate" class="control-label"></label>
+            @*<div class="form-group">
+                <label asp-for="AddedDate" class="control-label"></label>*@
                 @Html.HiddenFor(p => p.AddedDate, new { Value = @Model.AddedDate })
-                <span asp-validation-for="AddedDate" class="text-danger"></span>
-            </div>
+                @*<span asp-validation-for="AddedDate" class="text-danger"></span>
+            </div>*@
 
             <div class="form-group">
                 <label asp-for="Province" class="control-label"></label>

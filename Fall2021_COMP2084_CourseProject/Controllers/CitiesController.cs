@@ -65,6 +65,14 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,AddedDate,Province,Name")] City city)
         {
+            City sameCityName = _context.Cities.FirstOrDefault(p => p.Name == city.Name);
+            if (sameCityName != null)
+            {
+                //Alert when the same city already exists
+                ModelState.AddModelError("CustomError", "Already Exist!!!!!!!");
+            }
+
+
             //Check if the input is valid
             if (ModelState.IsValid)
             {
@@ -109,6 +117,13 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
             if (id != city.Id)
             {
                 return NotFound();
+            }
+
+            City sameCityName = _context.Cities.FirstOrDefault(p => p.Name == city.Name);
+            if (sameCityName != null)
+            {
+                //Alert when the same city already exists
+                ModelState.AddModelError("cityNameAlert", "The city already exists.");
             }
 
             //Check if the input is valid

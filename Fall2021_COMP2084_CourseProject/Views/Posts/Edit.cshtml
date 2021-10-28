@@ -13,11 +13,11 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
 
-            <div class="form-group">
-                <label asp-for="PostedDate" class="control-label"></label>
-                @Html.HiddenFor(p => p.PostedDate, new { Value = @Model.PostedDate })
-                <span asp-validation-for="PostedDate" class="text-danger"></span>
-            </div>
+            @*<div class="form-group">
+                <label asp-for="PostedDate" class="control-label"></label>*@
+            @Html.HiddenFor(p => p.PostedDate, new { Value = @Model.PostedDate })
+            @*<span asp-validation-for="PostedDate" class="text-danger"></span>
+                </div>*@
 
             <div class="form-group">
                 <label asp-for="CityId" class="control-label"></label>
@@ -37,38 +37,32 @@
             <div class="form-group">
                 <label asp-for="Photo" class="control-label"></label>
                 <input asp-for="Photo" type="file" class="form-control-file" id="edit-page-photo" />
-
                 <span asp-validation-for="Photo" class="text-danger"></span>
                 @if (Model.Photo != null)
                 {
                     <img src="~/img/posts/@Model.Photo" alt="Room photo" class="photo-review-img" />
-@*                    <script>
-                        if (document.getElementById("edit-page-photo").value == '')
-                        {
-                            document.getElementById("edit-page-photo").value = '@(Model.Photo)';
-                        }
-                    </script>
-*@                }
+                }
 
             </div>
             <div class="form-group">
                 <label asp-for="PhoneOnPost" class="control-label"></label>
-                <input asp-for="PhoneOnPost" class="form-control" />
+                <input asp-for="PhoneOnPost" class="form-control" type="tel"  />
                 <span asp-validation-for="PhoneOnPost" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="EmailOnPost" class="control-label"></label>
-                <input asp-for="EmailOnPost" class="form-control" />
+                <input asp-for="EmailOnPost" class="form-control" type="email" />
                 <span asp-validation-for="EmailOnPost" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="UserId" class="control-label"></label>
-                @Html.HiddenFor(p => p.UserId, new { Value = @Model.UserId })
-                <span asp-validation-for="UserId" class="text-danger"></span>
-            </div>
+            @*<div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>*@
+            @Html.HiddenFor(p => p.UserId, new { Value = @Model.UserId })
+            @*<span asp-validation-for="UserId" class="text-danger"></span>
+                </div>*@
 
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" onclick="useSamePhoto()" />
+
             </div>
         </form>
     </div>
@@ -77,6 +71,26 @@
 <div>
     <a asp-action="Index">Cancel</a>
 </div>
+
+
+
+
+@*<script type='text/javascript'>
+    function useSamePhoto()
+    {
+        if (document.getElementById("edit-page-photo").value == "")
+        {
+            console.log("OK!!!");
+            /* alert("OK!!!"); */
+            document.getElementById("edit-page-photo").setAttribute("type", "string");
+            document.getElementById("edit-page-photo").value = "@Model.Photo";
+        }
+    }
+</script>*@
+
+
+
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
