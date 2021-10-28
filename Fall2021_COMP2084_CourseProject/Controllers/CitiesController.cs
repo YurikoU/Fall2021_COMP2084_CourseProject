@@ -69,7 +69,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
             if (sameCityName != null)
             {
                 //Alert when the same city already exists
-                ModelState.AddModelError("CustomError", "Already Exist!!!!!!!");
+                ModelState.AddModelError("cityNameAlert", "The city already exists.");
             }
 
 
