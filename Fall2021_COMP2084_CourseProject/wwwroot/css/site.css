@@ -126,3 +126,9 @@ table a.email-color {
     margin: 0 auto;
     width: 500px;
 }
+
+.required-item {
+    color: red;
+    font-weight: bold;
+    padding-left: 4px;
+}

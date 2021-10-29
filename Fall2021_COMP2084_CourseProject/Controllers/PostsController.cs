@@ -153,19 +153,6 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
                 return NotFound();
             }
 
-/*            if (Photo != null)
-            {
-                *//*var fileName = UploadPhoto(Photo);
-
-                *//*post.Photo = _context.Posts.FirstOrDefault(p => p.Id == post.Id).Photo;*/
-                /*var oldPhoto = _context.Posts.Find(post.Id).Photo;*//*
-                var oldPhoto = _context.Posts.FirstOrDefault(p => p.Id == post.Id).Photo;
-                if (fileName != oldPhoto)
-                {
-                    post.Photo = fileName;
-                }*//*
-            }*/
-
             //Check if the input is valid
             if (ModelState.IsValid)
             {
