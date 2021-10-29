@@ -38,7 +38,7 @@
                 <label asp-for="Photo" class="control-label"></label>
                 <input asp-for="Photo" type="file" class="form-control-file" id="edit-page-photo" />
                 @*@Html.HiddenFor(p => p.Photo, new { Value = @Model.Photo })*@
-                @*<input asp-for="Photo" class="form-control-file" value="@Model.Photo" hidden />*@
+                @*<input asp-for="Photo" class="form-control-file" value="@Model.Photo" type="hidden"  />*@
                 <span asp-validation-for="Photo" class="text-danger"></span>
                 @if (Model.Photo != null)
                 {
