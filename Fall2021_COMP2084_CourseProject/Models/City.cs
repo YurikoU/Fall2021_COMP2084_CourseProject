@@ -14,8 +14,8 @@ namespace Fall2021_COMP2084_CourseProject.Models
         [Display(Name = "Added Date (MM/DD/YYYY)")]
         public DateTime AddedDate { get; set; }
 
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Please enter a new city name.")]
-        [MaxLength(30, ErrorMessage = "A province name must be up to 20 characters.")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Please enter a province name.")]
+        [MaxLength(30, ErrorMessage = "A province name must be up to 30 characters.")]
         public string Province { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Please enter a new city name.")]
