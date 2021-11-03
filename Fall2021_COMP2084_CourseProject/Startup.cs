@@ -36,6 +36,18 @@ namespace Fall2021_COMP2084_CourseProject
                 .AddRoles<IdentityRole>()  //Enable to Role Management for Authorization to track the account role, which is OFF by default
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
+
+            //Enable the Google authentication to sign in
+            services.AddAuthentication()
+                .AddGoogle( options =>
+                {
+                    //Access the Google Authentication section of appsettings.json
+                    IConfigurationSection googleAuthSection = Configuration.GetSection("Authentication:Google");
+
+                    //Read the Google API Key values from configure section and set as options
+                    options.ClientId = googleAuthSection["ClientId"];
+                    options.ClientSecret = googleAuthSection["ClientSecret"];
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
