@@ -1,10 +1,10 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Fall2021_COMP2084_CourseProject.Data;
+﻿using Fall2021_COMP2084_CourseProject.Data;
 using Fall2021_COMP2084_CourseProject.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Threading.Tasks;
 /*
 GET : Before clicking the submit button
 POST: After submitting the form
@@ -124,7 +124,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
             if (sameCityName != null && sameProvinceName != null)
             {
                 //Alert when the same city already exists
-                ModelState.AddModelError("cityNameAlert", "The city already exists.");                
+                ModelState.AddModelError("cityNameAlert", "The city already exists.");
             }
 
             //Check if the input is valid
@@ -182,10 +182,10 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
 
             //Delete the City object
             _context.Cities.Remove(city);
-            
+
             //Save the changes on the database connection
             await _context.SaveChangesAsync();
-            
+
             //Once done, it will redirect the user to the index page
             return RedirectToAction(nameof(Index));
         }
