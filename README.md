@@ -16,6 +16,10 @@ https://search-in-room.azurewebsites.net/
 - Email: user1@demo.ca   
 - Password: Demo123!   
 
+- Email: rich@gc.ca   
+- Password: Test123$   
+
+
 # About Me
 - Student Name: Yuriko Uchida
 - Student Number: #200448500
