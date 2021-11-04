@@ -37,8 +37,10 @@ namespace Fall2021_COMP2084_CourseProject
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
 
-            //Enable the Google authentication to sign in
+            //Enable the external authentications to sign in
             services.AddAuthentication()
+
+                //Google Authentication
                 .AddGoogle( options =>
                 {
                     //Access the Google Authentication section of appsettings.json
@@ -47,6 +49,17 @@ namespace Fall2021_COMP2084_CourseProject
                     //Read the Google API Key values from configure section and set as options
                     options.ClientId = googleAuthSection["ClientId"];
                     options.ClientSecret = googleAuthSection["ClientSecret"];
+                })
+
+                //Facebook Authentication
+                .AddFacebook(options =>
+                {
+                    //Access the Facebook Authentication section of appsettings.json
+                    IConfigurationSection facebookAuthSection = Configuration.GetSection("Authentication:Facebook");
+
+                    //Read the Facebook API Key values from configure section and set as options
+                    options.AppId = facebookAuthSection["AppId"];
+                    options.AppSecret = facebookAuthSection["AppSecret"];
                 });
         }
 
