@@ -8,6 +8,7 @@ using Fall2021_COMP2084_CourseProject.Models;
 using Microsoft.AspNetCore.Http;
 using System.IO;
 using System;
+using Microsoft.AspNetCore.Authorization;
 /*
 GET : Before clicking the submit button
 POST: After submitting the form
@@ -55,6 +56,8 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
             return View(post);
         }
 
+        //Only the logged in users and administrator can accesses
+        [Authorize]
         // GET: Posts/Create
         public IActionResult Create()
         {
@@ -63,6 +66,8 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
             return View();
         }
 
+        //Only the logged in users and administrator can accesses
+        [Authorize]
         // POST: Posts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -121,8 +126,8 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         }
 
 
-
-
+        //Only the logged in users and administrator can accesses
+        [Authorize]
         // GET: Posts/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -141,6 +146,8 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
             return View(post);
         }
 
+        //Only the logged in users and administrator can accesses
+        [Authorize]
         // POST: Posts/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -190,6 +197,8 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
             return View(post);
         }
 
+        //Only the logged in users and administrator can accesses
+        [Authorize]
         // GET: Posts/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -209,6 +218,8 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
             return View(post);
         }
 
+        //Only the logged in users and administrator can accesses
+        [Authorize]
         // POST: Posts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
