@@ -132,3 +132,7 @@ table a.email-color {
     font-weight: bold;
     padding-left: 4px;
 }
+
+.space-between-edit-and-cancel {
+    padding-right: 20px;
+}
