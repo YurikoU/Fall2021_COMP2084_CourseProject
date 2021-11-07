@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'Search-In-Room'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AF63F38245F940D3AFEE9EF2E0332066 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_811722E583184153B6951573545B13B8 }}
           package: .
