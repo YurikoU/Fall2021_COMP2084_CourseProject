@@ -153,7 +153,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,PostedDate,Rent,Description,PhoneOnPost,EmailOnPost,UserId,CityId")] Post post, IFormFile Photo)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,PostedDate,Rent,Description,PhoneOnPost,EmailOnPost,UserId,CityId")] Post post, IFormFile Photo, string CurrentPhoto)
         {
             if (id != post.Id)
             {
@@ -165,11 +165,16 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
             {
                 try
                 {
-                    //If there is an uploaded photo, store it into the Photo property
                     if (Photo != null)
-                    {
+                    {   
+                        //If there is an uploaded photo, store it into the Photo property
                         var fileName = UploadPhoto(Photo);
                         post.Photo = fileName;
+                    }
+                    else
+                    {
+                        //Keep the existing photo unless there is no new one uploaded
+                        post.Photo = CurrentPhoto;
                     }
 
                     //Update the Post object
