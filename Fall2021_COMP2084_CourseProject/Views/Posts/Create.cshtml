@@ -39,14 +39,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="EmailOnPost" class="control-label"></label><span class="required-item">*</span>
-                <input asp-for="EmailOnPost" class="form-control" type="email" placeholder="John-Smith@example.com" required />
+                <input asp-for="EmailOnPost" class="form-control" type="email" placeholder="John-Smith@example.com" value="@User.Identity.Name" required />
                 <span asp-validation-for="EmailOnPost" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="UserId" class="control-label"></label>
-                <input asp-for="UserId" class="form-control" />
-                <span asp-validation-for="UserId" class="text-danger"></span>
-            </div>
+            @*<div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>*@
+                <input type="hidden" asp-for="UserId" class="form-control"/>
+                @*<span asp-validation-for="UserId" class="text-danger"></span>
+            </div>*@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

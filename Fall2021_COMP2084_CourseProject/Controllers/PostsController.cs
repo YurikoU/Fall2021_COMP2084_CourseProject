@@ -87,6 +87,8 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
                     post.Photo = fileName;
                 }
 
+                //UserId is the user's email address to log in
+                post.UserId = User.Identity.Name;
 
                 //Add the Post object
                 _context.Add(post);
