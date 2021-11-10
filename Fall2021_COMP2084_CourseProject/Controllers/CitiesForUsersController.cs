@@ -19,12 +19,23 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
             _context = context;
         }
 
+
+        //GET:  /CitiesForUsers
         public IActionResult Index()
         {
             //Use Cities Dbset to fetch list of cities to display to users
             var cities = _context.Cities.OrderBy(c => c.Name).ToList(); //Convert the  query into the list   
 
             return View(cities);
+        }
+
+
+        //GET:  /CitiesForUsers/PostsByCity/{CityId}
+        public IActionResult PostsByCity(int id)
+        {
+            //Get all posts under the selected city
+            var posts = _context.Posts.Where(p => p.CityId == id).OrderBy(p => p.PostedDate).ToList();
+            return View(posts);
         }
     }
 }
