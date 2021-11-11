@@ -24,7 +24,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         public IActionResult Index()
         {
             //Use Cities Dbset to fetch list of cities to display to users
-            var cities = _context.Cities.OrderBy(c => c.Name).ToList(); //Convert the  query into the list   
+            var cities = _context.Cities.OrderBy(p => p.Province).ThenBy(p => p.Name).ToList(); //Convert the  query into the list   
 
             return View(cities);
         }
