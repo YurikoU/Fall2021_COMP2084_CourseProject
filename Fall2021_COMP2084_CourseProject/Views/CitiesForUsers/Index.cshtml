@@ -8,8 +8,9 @@
     {
         <div class="col-sm-6 col-lg-4 mb-3">
             <div class="card mb-4 text-center h-100">
-                <div class="card-body">
-                    <a asp-controller="CitiesForUsers" asp-action="PostsByCity" asp-route-id="@c.Id">
+                <div class="card-body ">
+                    <h5 class="card-title">@c.Province</h5>
+                    <a asp-controller="CitiesForUsers" asp-action="PostsByCity" asp-route-id="@c.Id" class="card-text">
                         @c.Name
                     </a>
                 </div>
