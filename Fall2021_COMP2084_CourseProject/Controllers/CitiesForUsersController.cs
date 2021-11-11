@@ -35,6 +35,8 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         {
             //Get all posts under the selected city
             var posts = _context.Posts.Where(p => p.CityId == id).OrderBy(p => p.PostedDate).ToList();
+            //Store the city name in ViewBag to display as a page title
+            ViewBag.City = _context.Cities.Find(id).Name;
             return View(posts);
         }
     }
