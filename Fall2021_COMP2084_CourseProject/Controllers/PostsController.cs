@@ -42,7 +42,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("404");
             }
 
             var post = await _context.Posts
@@ -50,7 +50,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (post == null)
             {
-                return NotFound();
+                return View("404");
             }
 
             return View(post);
@@ -135,13 +135,13 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("404");
             }
 
             var post = await _context.Posts.FindAsync(id);
             if (post == null)
             {
-                return NotFound();
+                return View("404");
             }
             //Get the list of Cities and store them in ViewData
             ViewData["CityId"] = new SelectList(_context.Cities, "Id", "Name", post.CityId);
@@ -159,7 +159,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         {
             if (id != post.Id)
             {
-                return NotFound();
+                return View("404");
             }
 
             //Check if the input is valid
@@ -189,7 +189,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
                 {
                     if (!PostExists(post.Id))
                     {
-                        return NotFound();
+                        return View("404");
                     }
                     else
                     {
@@ -211,7 +211,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("404");
             }
 
             var post = await _context.Posts
@@ -219,7 +219,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (post == null)
             {
-                return NotFound();
+                return View("404");
             }
 
             return View(post);

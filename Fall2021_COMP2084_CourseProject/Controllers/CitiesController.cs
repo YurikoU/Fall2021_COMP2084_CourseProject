@@ -38,14 +38,14 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("404");
             }
 
             var city = await _context.Cities
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (city == null)
             {
-                return NotFound();
+                return View("404");
             }
 
             return View(city);
@@ -95,13 +95,13 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("404");
             }
 
             var city = await _context.Cities.FindAsync(id);
             if (city == null)
             {
-                return NotFound();
+                return View("404");
             }
             return View(city);
         }
@@ -116,7 +116,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
 
             if (id != city.Id)
             {
-                return NotFound();
+                return View("404");
             }
 
             City sameCityName = _context.Cities.FirstOrDefault(p => p.Name == city.Name);
@@ -142,7 +142,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
                 {
                     if (!CityExists(city.Id))
                     {
-                        return NotFound();
+                        return View("404");
                     }
                     else
                     {
@@ -160,14 +160,14 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("404");
             }
 
             var city = await _context.Cities
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (city == null)
             {
-                return NotFound();
+                return View("404");
             }
 
             return View(city);
