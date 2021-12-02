@@ -155,5 +155,50 @@ namespace SearchInRoomTests
         }
         #endregion
 
+        #region Delete (GET)
+        //Check for null CityId
+        [TestMethod]
+        public void DeleteLoads404IfCityIdNull()
+        {
+            //Act(=when execution)
+            var result = (ViewResult)controller.Delete(null).Result;
+
+            //Assert(=result) 
+            Assert.AreEqual("404", result.ViewName);
+        }
+
+        //Check for invalid CityId
+        [TestMethod]
+        public void DeleteLoads404IfCityidInvalid()
+        {
+            //Act(=when execution)
+            var result = (ViewResult)controller.Delete(-3).Result;
+
+            //Assert(=result) 
+            Assert.AreEqual("404", result.ViewName);
+        }
+
+        //Check for returning the correct data model (City obj)
+        [TestMethod]
+        public void DeleteLoadsCityIfCityidValid()
+        {
+            //Act(=when execution)
+            var result = (ViewResult)controller.Delete(cities[0].Id).Result;            
+
+            //Assert(=result) 
+            Assert.AreEqual(cities[0], result.Model);
+        }
+
+        //Check for returning the correct view
+        [TestMethod]
+        public void DeleteLoadsViewIfCityidValid()
+        {
+            //Act(=when execution)
+            var result = (ViewResult)controller.Delete(cities[0].Id).Result;
+
+            //Assert(=result) 
+            Assert.AreEqual("Delete", result.ViewName);
+        }
+        #endregion
     }
 }
