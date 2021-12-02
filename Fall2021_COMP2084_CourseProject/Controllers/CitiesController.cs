@@ -103,7 +103,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
             {
                 return View("404");
             }
-            return View(city);
+            return View("Edit", city);
         }
 
         // POST: Cities/Edit/5
