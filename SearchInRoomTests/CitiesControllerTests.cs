@@ -93,7 +93,6 @@ namespace SearchInRoomTests
         }
         #endregion
 
-
         #region Edit (GET)
         //[TestMethod] decorator: designed for a unit test method
         [TestMethod]
@@ -144,8 +143,16 @@ namespace SearchInRoomTests
         #endregion
 
         #region Create (GET)
+        //Check for returning the correct view
+        [TestMethod]
+        public void CreateLoadsView()
+        {
+            //Act(=when execution)
+            var result = (ViewResult)controller.Create(); //Create() method is NOT async.
 
-
+            //Assert(=result) 
+            Assert.AreEqual("Create", result.ViewName);
+        }
         #endregion
 
     }

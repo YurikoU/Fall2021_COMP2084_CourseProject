@@ -54,7 +54,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
         // GET: Cities/Create
         public IActionResult Create()
         {
-            return View();
+            return View("Create");
         }
 
         // POST: Cities/Create
