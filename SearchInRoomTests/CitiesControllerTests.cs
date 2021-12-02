@@ -65,6 +65,34 @@ namespace SearchInRoomTests
         }
         #endregion
 
+        #region Index (GET)
+        //Check for returning the correct data model (City obj)
+        [TestMethod]
+        public void IndexLoadCities()
+        {
+            //Act(=when execution)
+            var result = (ViewResult)controller.Index().Result;
+
+            //Take the data model in the ViewResult, and then cast it
+            List<City> dataModel = (List<City>)result.Model;
+
+            //Assert(=result) 
+            //Compare the mock data and the real data model
+            CollectionAssert.AreEqual(cities.OrderBy(c => c.Province).ThenBy(c => c.Name).ToList(), dataModel);
+        }
+
+        //Check for returning the correct view
+        [TestMethod]
+        public void IndexLoadsView()
+        {
+            //Act(=when execution)
+            var result = (ViewResult)controller.Index().Result;
+
+            //Assert(=result) 
+            Assert.AreEqual("Index", result.ViewName);
+        }
+        #endregion
+
 
         #region Edit (GET)
         //[TestMethod] decorator: designed for a unit test method
@@ -114,5 +142,11 @@ namespace SearchInRoomTests
 
         }
         #endregion
+
+        #region Create (GET)
+
+
+        #endregion
+
     }
 }
