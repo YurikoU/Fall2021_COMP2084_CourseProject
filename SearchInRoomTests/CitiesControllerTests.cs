@@ -200,5 +200,48 @@ namespace SearchInRoomTests
             Assert.AreEqual("Delete", result.ViewName);
         }
         #endregion
+
+        #region DeleteConfirmed (POST)
+        //Check for deleting the city
+        [TestMethod]
+        public void DeleteConfirmedDeletesCity()
+        {
+            //Act(=when execution)
+            //Delete the city
+            var result = controller.DeleteConfirmed(cities[0].Id).Result;
+
+            //Return if the DB fails deleting the city            
+            //Must be false as the DB can't find the city
+            bool isCityExisting = _context.Cities.Any(c => c.Id == cities[0].Id);
+
+            //Assert(=result) 
+            Assert.IsFalse(isCityExisting);
+        }
+
+        //Check for NOT deleting another city
+        [TestMethod]
+        public void DeleteConfirmedNotDeleteAnother()
+        {
+            //Act(=when execution)
+            var before = _context.Cities.Count();
+            var result = controller.DeleteConfirmed(cities[0].Id);
+            var after = _context.Cities.Count();
+
+            //Assert(=result) 
+            Assert.AreEqual((before - 1), after);
+        }
+
+        //Check for redirecting to the proper view
+        [TestMethod]
+        public void DeleteConfirmedRedirectsView()
+        {
+            //Act(=when execution)
+            //Cast result as RedirectToActionResult cuz the method to test returns that method
+            var result = (RedirectToActionResult)controller.DeleteConfirmed(cities[0].Id).Result;
+
+            //Assert(=result) 
+            Assert.AreEqual("Index", result.ActionName);//asp-action
+        }
+        #endregion
     }
 }
