@@ -366,12 +366,18 @@ namespace SearchInRoomTests
 /*        [TestMethod]
         public void EditRedirectsValidViewIfInputValid()
         {
+            //Arrange(=given values)
+            var options = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .EnableSensitiveDataLogging().Options;
+            _context = new ApplicationDbContext(options);
+            controller = new CitiesController(_context);
+
             //Act(=when execution)
-            var result = controller.Edit(cities[0].Id, cities[0]);
-            var redirectResult = (RedirectToActionResult)result.Result;
+            var result = controller.Edit(updatedCity.Id, updatedCity).Result as RedirectToActionResult;
+            //RedirectToActionResult redirectResult = (RedirectToActionResult)result;
             //Assert.IsNotNull(result);
             //Assert(=result) 
-            Assert.AreEqual("Index", redirectResult.ActionName);
+            Assert.AreEqual("Index", result.ActionName);
         }*/
 
         [TestMethod]

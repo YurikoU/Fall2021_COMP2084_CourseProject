@@ -190,7 +190,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CityExists(int id)
+        public bool CityExists(int id)
         {
             return _context.Cities.Any(e => e.Id == id);
         }
