@@ -30,7 +30,12 @@ namespace SearchInRoomTests
             Province = "Alberta",
             Name = "Calgary",
         };
-
+        City updatedCity = new City  //This is cities[0] edited.
+        {
+            Id = 555,
+            Province = "British Columbia",
+            Name = "Raincouver",
+        };
 
         //[TestInitialize] decorator: runs automatically before each test
         [TestInitialize]
@@ -358,14 +363,26 @@ namespace SearchInRoomTests
             Assert.AreEqual(invalidCity, result.Model);
         }
 
-        [TestMethod]
+/*        [TestMethod]
         public void EditRedirectsValidViewIfInputValid()
         {
             //Act(=when execution)
-            var result = (RedirectToActionResult)controller.Edit(555, cities[0]).Result;
+            var result = controller.Edit(cities[0].Id, cities[0]);
+            var redirectResult = (RedirectToActionResult)result.Result;
+            //Assert.IsNotNull(result);
+            //Assert(=result) 
+            Assert.AreEqual("Index", redirectResult.ActionName);
+        }*/
+
+        [TestMethod]
+        public void EditSavesCity()
+        {
+            //Act(=when execution)
+            var result = controller.Edit(cities[0].Id, cities[0]);
+            bool isCitySaved = _context.Cities.Any(c => c.Id == cities[0].Id);
 
             //Assert(=result) 
-            Assert.AreEqual("Index", result.ActionName);//asp-action
+            Assert.IsTrue(isCitySaved);
         }
         #endregion
     }
