@@ -20,7 +20,7 @@ namespace SearchInRoomTests
         List<City> cities = new List<City>();//Mock data to run test methods
         City invalidCity = new City
         {
-            Id = 0,
+            Id = -5,
             Province = "Alberta",
             Name = "Calgary",
         };
@@ -196,7 +196,7 @@ namespace SearchInRoomTests
         public void DeleteReturnsValidCityIfCityidValid()
         {
             //Act(=when execution)
-            var result = (ViewResult)controller.Delete(cities[0].Id).Result;            
+            var result = (ViewResult)controller.Delete(cities[0].Id).Result;
 
             //Assert(=result) 
             Assert.AreEqual(cities[0], result.Model);
@@ -259,10 +259,10 @@ namespace SearchInRoomTests
 
         #region Create (POST)
         [TestMethod]
-        public void CreateReturnsViewAgainIfInputInvalid()
+        public void CreateReturnsSameViewAgainIfInputInvalid()
         {
             //Act(=when execution)
-            controller.ModelState.AddModelError("Id", "Id must be integers only.");//Add an error
+            controller.ModelState.AddModelError("Id", "Id must be positive numbers only.");//Add an error
             var result = (ViewResult)controller.Create(invalidCity).Result;
 
             //Assert(=result) 
@@ -273,7 +273,7 @@ namespace SearchInRoomTests
         public void CreateReturnsCityIfInputInvalid()
         {
             //Act(=when execution)
-            controller.ModelState.AddModelError("Id", "Id must be integers only.");//Add an error
+            controller.ModelState.AddModelError("Id", "Id must be positive numbers only.");//Add an error
             var result = (ViewResult)controller.Create(invalidCity).Result;
 
             //Assert(=result) 
@@ -294,7 +294,7 @@ namespace SearchInRoomTests
         public void CreateCreatesCity()
         {
             //Act(=when execution)
-            var result = (RedirectToActionResult)controller.Create(validCity).Result;
+            var result = controller.Create(validCity);
             bool isCityCreated = _context.Cities.Any(c => c.Id == 111);
 
             //Assert(=result) 
@@ -306,13 +306,67 @@ namespace SearchInRoomTests
         {
             //Act(=when execution)
             var before = _context.Cities.Count();
-            var result = (RedirectToActionResult)controller.Create(validCity).Result;
+            var result = controller.Create(validCity);
             var after = _context.Cities.Count();
 
             //Assert(=result) 
             Assert.AreEqual((before + 1), after);
         }
+        #endregion
 
+        #region Edit (POST)
+        [TestMethod]
+        public void EditReturns404IfCityidNotMatched()
+        {
+            //Act(=when execution)
+            var result = (ViewResult)controller.Edit(cities[2].Id, cities[0]).Result;
+
+            //Assert(=result) 
+            Assert.AreEqual("404", result.ViewName);
+        }
+
+        [TestMethod]
+        public void EditReturns404IfCityidNotExist()
+        {
+            //Act(=when execution)
+            var result = (ViewResult)controller.Edit(11111, cities[0]).Result;
+
+
+            //Assert(=result) 
+            Assert.AreEqual("404", result.ViewName);
+        }
+
+        [TestMethod]
+        public void EditReturnsSameViewAgainIfInputInvalid()
+        {
+            //Act(=when execution)
+            controller.ModelState.AddModelError("Id", "Id must be positive numbers only.");//Add an error
+            var result = (ViewResult)controller.Edit(invalidCity.Id, invalidCity).Result;
+
+            //Assert(=result) 
+            Assert.AreEqual("Edit", result.ViewName);
+        }
+
+        [TestMethod]
+        public void EditReturnsCityIfInputInvalid()
+        {
+            //Act(=when execution)
+            controller.ModelState.AddModelError("Id", "Id must be positive numbers only.");//Add an error
+            var result = (ViewResult)controller.Edit(invalidCity.Id, invalidCity).Result;
+
+            //Assert(=result) 
+            Assert.AreEqual(invalidCity, result.Model);
+        }
+
+        [TestMethod]
+        public void EditRedirectsValidViewIfInputValid()
+        {
+            //Act(=when execution)
+            var result = (RedirectToActionResult)controller.Edit(555, cities[0]).Result;
+
+            //Assert(=result) 
+            Assert.AreEqual("Index", result.ActionName);//asp-action
+        }
         #endregion
     }
 }
