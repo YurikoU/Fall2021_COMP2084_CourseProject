@@ -18,6 +18,19 @@ namespace SearchInRoomTests
         private ApplicationDbContext _context;
         CitiesController controller;
         List<City> cities = new List<City>();//Mock data to run test methods
+        City invalidCity = new City
+        {
+            Id = 0,
+            Province = "Alberta",
+            Name = "Calgary",
+        };
+        City validCity = new City
+        {
+            Id = 111,
+            Province = "Alberta",
+            Name = "Calgary",
+        };
+
 
         //[TestInitialize] decorator: runs automatically before each test
         [TestInitialize]
@@ -68,7 +81,7 @@ namespace SearchInRoomTests
         #region Index (GET)
         //Check for returning the correct data model (City obj)
         [TestMethod]
-        public void IndexLoadCities()
+        public void IndexReturnsValidCities()
         {
             //Act(=when execution)
             var result = (ViewResult)controller.Index().Result;
@@ -83,7 +96,7 @@ namespace SearchInRoomTests
 
         //Check for returning the correct view
         [TestMethod]
-        public void IndexLoadsView()
+        public void IndexReturnsValidView()
         {
             //Act(=when execution)
             var result = (ViewResult)controller.Index().Result;
@@ -97,7 +110,7 @@ namespace SearchInRoomTests
         //[TestMethod] decorator: designed for a unit test method
         [TestMethod]
         //Check for null CityId
-        public void EditLoads404IfCityidNull()
+        public void EditReturns404IfCityidNull()
         {
             //Act(=when execution)
             var result = (ViewResult)controller.Edit(null)
@@ -109,7 +122,7 @@ namespace SearchInRoomTests
 
         //Check for invalid CityId
         [TestMethod]
-        public void EditLoads404IfCityidInvalid()
+        public void EditReturns404IfCityidInvalid()
         {
             //Act(=when execution)
             var result = (ViewResult)controller.Edit(999).Result;//In-memory DB doesn't have CityId=999
@@ -120,7 +133,7 @@ namespace SearchInRoomTests
 
         //Check for returning the correct data model (City obj)
         [TestMethod]
-        public void EditLoadsCityIfCityidValid()
+        public void EditReturnsValidCityIfCityidValid()
         {
             //Act(=when execution)
             var result = (ViewResult)controller.Edit(cities[0].Id).Result;//In-memory DB has CityId=555(cities[0].Id)
@@ -131,7 +144,7 @@ namespace SearchInRoomTests
 
         //Check for returning the correct view
         [TestMethod]
-        public void EditLoadsViewIfCityidValid()
+        public void EditReturnsValidViewIfCityidValid()
         {
             //Act(=when execution)
             var result = (ViewResult)controller.Edit(cities[0].Id).Result;
@@ -145,7 +158,7 @@ namespace SearchInRoomTests
         #region Create (GET)
         //Check for returning the correct view
         [TestMethod]
-        public void CreateLoadsView()
+        public void CreateReturnsValidView()
         {
             //Act(=when execution)
             var result = (ViewResult)controller.Create(); //Create() method is NOT async.
@@ -158,7 +171,7 @@ namespace SearchInRoomTests
         #region Delete (GET)
         //Check for null CityId
         [TestMethod]
-        public void DeleteLoads404IfCityIdNull()
+        public void DeleteReturns404IfCityidNull()
         {
             //Act(=when execution)
             var result = (ViewResult)controller.Delete(null).Result;
@@ -169,7 +182,7 @@ namespace SearchInRoomTests
 
         //Check for invalid CityId
         [TestMethod]
-        public void DeleteLoads404IfCityidInvalid()
+        public void DeleteReturns404IfCityidInvalid()
         {
             //Act(=when execution)
             var result = (ViewResult)controller.Delete(-3).Result;
@@ -180,7 +193,7 @@ namespace SearchInRoomTests
 
         //Check for returning the correct data model (City obj)
         [TestMethod]
-        public void DeleteLoadsCityIfCityidValid()
+        public void DeleteReturnsValidCityIfCityidValid()
         {
             //Act(=when execution)
             var result = (ViewResult)controller.Delete(cities[0].Id).Result;            
@@ -191,7 +204,7 @@ namespace SearchInRoomTests
 
         //Check for returning the correct view
         [TestMethod]
-        public void DeleteLoadsViewIfCityidValid()
+        public void DeleteReturnsValidViewIfCityidValid()
         {
             //Act(=when execution)
             var result = (ViewResult)controller.Delete(cities[0].Id).Result;
@@ -220,7 +233,7 @@ namespace SearchInRoomTests
 
         //Check for NOT deleting another city
         [TestMethod]
-        public void DeleteConfirmedNotDeleteAnother()
+        public void DeleteConfirmedNotDeleteAnotherCity()
         {
             //Act(=when execution)
             var before = _context.Cities.Count();
@@ -233,7 +246,7 @@ namespace SearchInRoomTests
 
         //Check for redirecting to the proper view
         [TestMethod]
-        public void DeleteConfirmedRedirectsView()
+        public void DeleteConfirmedRedirectsValidView()
         {
             //Act(=when execution)
             //Cast result as RedirectToActionResult cuz the method to test returns that method
@@ -242,6 +255,64 @@ namespace SearchInRoomTests
             //Assert(=result) 
             Assert.AreEqual("Index", result.ActionName);//asp-action
         }
+        #endregion
+
+        #region Create (POST)
+        [TestMethod]
+        public void CreateReturnsViewAgainIfInputInvalid()
+        {
+            //Act(=when execution)
+            controller.ModelState.AddModelError("Id", "Id must be integers only.");//Add an error
+            var result = (ViewResult)controller.Create(invalidCity).Result;
+
+            //Assert(=result) 
+            Assert.AreEqual("Create", result.ViewName);
+        }
+
+        [TestMethod]
+        public void CreateReturnsCityIfInputInvalid()
+        {
+            //Act(=when execution)
+            controller.ModelState.AddModelError("Id", "Id must be integers only.");//Add an error
+            var result = (ViewResult)controller.Create(invalidCity).Result;
+
+            //Assert(=result) 
+            Assert.AreEqual(invalidCity, result.Model);
+        }
+
+        [TestMethod]
+        public void CreateRedirectsValidViewIfInputValid()
+        {
+            //Act(=when execution)
+            var result = (RedirectToActionResult)controller.Create(validCity).Result;
+
+            //Assert(=result) 
+            Assert.AreEqual("Index", result.ActionName);//asp-action
+        }
+
+        [TestMethod]
+        public void CreateCreatesCity()
+        {
+            //Act(=when execution)
+            var result = (RedirectToActionResult)controller.Create(validCity).Result;
+            bool isCityCreated = _context.Cities.Any(c => c.Id == 111);
+
+            //Assert(=result) 
+            Assert.IsTrue(isCityCreated);
+        }
+
+        [TestMethod]
+        public void CreateNotCreateAnotherCity()
+        {
+            //Act(=when execution)
+            var before = _context.Cities.Count();
+            var result = (RedirectToActionResult)controller.Create(validCity).Result;
+            var after = _context.Cities.Count();
+
+            //Assert(=result) 
+            Assert.AreEqual((before + 1), after);
+        }
+
         #endregion
     }
 }

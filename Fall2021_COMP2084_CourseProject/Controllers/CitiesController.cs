@@ -87,7 +87,7 @@ namespace Fall2021_COMP2084_CourseProject.Controllers
                 //Once done, it will redirect the user to the index page
                 return RedirectToAction(nameof(Index));
             }
-            return View(city);
+            return View("Create", city);
         }
 
         // GET: Cities/Edit/5
