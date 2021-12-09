@@ -58,6 +58,9 @@ namespace Fall2021_COMP2084_CourseProject
 
             //Enable session support
             services.AddSession();
+
+            //Enable Swagger for API document file
+            services.AddSwaggerGen();//Swagger for API document
         }
 
 
@@ -95,6 +98,19 @@ namespace Fall2021_COMP2084_CourseProject
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+
+            //When app starts, use Swagger to inspect any API controllers and generate a new documentation file
+            //Any time your API is changed, the Swagger document will get regenerated to be always up to date.
+            //And, normally, you'd also add the authentication to the API documentation
+            //so your data through the Swagger can be protected
+            app.UseSwagger();
+            app.UseSwaggerUI(options => {
+                options.SwaggerEndpoint(
+                    "/swagger/v1/swagger.json", //The endpoint of the URI
+                    "Search In Room API"//The title of the API documentation file
+                );
+            });
+
         }
     }
 }

@@ -9,10 +9,11 @@ using Fall2021_COMP2084_CourseProject.Data;
 using Fall2021_COMP2084_CourseProject.Models;
 /*
  =Methods for API controller=
- HttpGet   : Read the data
- HttpPut   : Update the data
- HttpPost  : Create the data
- HttpDelete: no return, no content
+ (On your browser, you can see GET() only. So, you should use Postman application to see all methods.)
+ GET   : Read the data
+ PUT   : Update the data
+ POST  : Create the data
+ DELETE: no return, no content
 
  *In the web controller, you have GET(when loading page) and POST(when submitting a form) methods only.
  */
@@ -35,7 +36,9 @@ namespace SearchInRoom.Controllers.api
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Post>>> GetPosts()
         {
-            return await _context.Posts.ToListAsync();
+            return await _context.Posts
+                .OrderBy(p => p.PostedDate) //Make the JSON list sorted by the posted date
+                .ToListAsync();
         }
 
         // GET: api/Posts/5
