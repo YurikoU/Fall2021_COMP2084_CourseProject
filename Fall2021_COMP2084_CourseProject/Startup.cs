@@ -55,12 +55,20 @@ namespace Fall2021_COMP2084_CourseProject
                     options.AppId = facebookAuthSection["AppId"];
                     options.AppSecret = facebookAuthSection["AppSecret"];
                 });
+
+            //Enable session support
+            services.AddSession();
         }
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //Session support - Don't put at the bottom if you want it work!
+            //Retrieve the session data
+            app.UseSession();
+           
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
