@@ -16,11 +16,6 @@ https://search-in-room.azurewebsites.net/
 - Email: user1@demo.ca   
 - Password: Demo123!   
 
-# About Me
-- Student Name: Yuriko Uchida
-- Student Number: #200448500
-- Course Name: Server-Side Scripting-ASP.NET - 01 (COMP2084)
-
 # References
 #### CSS Framework
 https://getbootstrap.com/
