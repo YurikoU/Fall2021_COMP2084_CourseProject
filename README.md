@@ -1,3 +1,7 @@
+https://user-images.githubusercontent.com/76763897/185765673-9fcbcf5f-4bfb-4608-91e5-bf73803ee243.mp4
+
+
+
 # Search In Room
 This is a simple .NET Core application in C# using the MVC Scaffolding structure. This application is to search for a shared house. A user can review the existing posts to search a room. Once a user logs in, they can add a new post to look for a housemate.
 
